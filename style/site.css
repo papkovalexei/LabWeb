@@ -1,0 +1,98 @@
+/*#17202c*/
+body {
+    background-color: rgb(0, 6, 34);
+    font-family: Calibri;
+    margin: 0;
+}
+
+#navbar {
+    background-color: #17202c;
+}
+
+#imagebox {
+    border: 3px solid rgb(29, 210, 255);
+    border-radius: 400px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    padding: 20px;
+    margin: 20px;
+    background: url("../images/photome.jpg");
+    background-size: 100% 100%;
+}
+
+.p-div {
+
+    text-align: center;
+vertical-align: middle;
+    vertical-align: middle;
+}
+
+.f-div {
+    font-size: 35px;
+}
+
+.bio {
+    border: 3px solid rgb(29, 210, 255);
+    color: rgb(29, 210, 255);
+    border-radius: 6px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    padding: 20px;
+    margin: 20px;
+}
+
+.g-info {
+    border: 3px solid rgb(29, 210, 255);
+    color: rgb(29, 210, 255);
+    border-radius: 6px;
+    grid-column-start: 3;
+    padding: 20px;
+    margin: 20px;
+}
+
+#m-navbar li {
+    display: inline;
+    vertical-align: middle;
+}
+
+#m-navbar li+li+li {
+    margin-left: 30px;
+}
+
+#m-navbar {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+}
+
+@font-face {
+    font-family: Calibri; /* Гарнитура шрифта */
+    src: url(style/Calibri.ttf); /* Путь к файлу со шрифтом */
+}
+
+#f-name {
+    font-size: 30px;
+}
+
+.li-a-link {
+    color: ivory;
+    text-decoration: none;
+}
+
+.li-a-link-name {
+    size: 30px;
+    color: aqua;
+    text-decoration: none;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 600px;
+ }
