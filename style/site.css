@@ -23,9 +23,7 @@ body {
 }
 
 .p-div {
-
     text-align: center;
-vertical-align: middle;
     vertical-align: middle;
 }
 
@@ -34,6 +32,9 @@ vertical-align: middle;
 }
 
 .bio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 3px solid rgb(29, 210, 255);
     color: rgb(29, 210, 255);
     border-radius: 6px;
@@ -45,7 +46,24 @@ vertical-align: middle;
     margin: 20px;
 }
 
+#f-footer {
+    size: 10px;
+    color: ivory;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/ 
+    height: 4%;
+    left: 0;
+}
+
 .g-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 3px solid rgb(29, 210, 255);
     color: rgb(29, 210, 255);
     border-radius: 6px;
@@ -96,3 +114,22 @@ vertical-align: middle;
     grid-template-columns: repeat(3, 1fr);
     height: 600px;
  }
+
+.pre-SM {
+    text-align: center;
+    padding-right: 270px;
+    font-size: 30px;
+    color: ivory;
+}
+
+#formula {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#f-formula {
+    margin-top: 6%;
+    color: ivory;
+    font-size: 70px;
+}
