@@ -133,3 +133,15 @@ body {
     color: ivory;
     font-size: 70px;
 }
+
+#contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#f-contact {
+    margin-top: 6%;
+    color: ivory;
+    font-size: 70px;
+}
