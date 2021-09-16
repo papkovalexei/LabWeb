@@ -115,6 +115,31 @@ body {
     height: 600px;
  }
 
+#wrapper-formula {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#good {
+    margin: 100px;
+    justify-content: center;
+    border: 3px solid rgb(29, 255, 29);
+    color: rgb(29, 210, 255);
+    border-radius: 6px;
+    display: flex;
+    padding: 5%;
+}
+
+#bad {
+    margin: 100px;
+    justify-content: center;
+    border: 3px solid rgb(255, 29, 29);
+    color: rgb(29, 210, 255);
+    border-radius: 6px;
+    display: flex;
+    padding: 5%;
+}
+
 .pre-SM {
     text-align: center;
     padding-right: 270px;
