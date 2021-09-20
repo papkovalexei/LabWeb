@@ -60,10 +60,20 @@ body {
     left: 0;
 }
 
+#text-formula {
+    display: flex;
+    justify-content: center;
+}
+
+#h2-formula {
+    margin-top: 50px;
+    color: aqua;
+}
+
 .g-info {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     border: 3px solid rgb(29, 210, 255);
     color: rgb(29, 210, 255);
     border-radius: 6px;
@@ -150,7 +160,6 @@ body {
 #formula {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 #f-formula {
@@ -162,7 +171,6 @@ body {
 #contact {
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 #f-contact {
