@@ -1,33 +1,83 @@
-/*#17202c*/
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 body {
     background-color: rgb(0, 6, 34);
-    font-family: Calibri;
+    font-family: 'Muli', sans-serif;
+    font-weight: 400;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 1;
+    letter-spacing: -.003em;
     margin: 0;
 }
 
-#navbar {
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/ 
+    height: 4%;
+    left: 0;
+}
+
+footer p {
+    size: 10px;
+    color: ivory;
+}
+
+header {
     background-color: #17202c;
 }
 
-#imagebox {
+header ul {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+}
+header ul li+li+li {
+    margin-left: 30px;
+}
+header ul li {
+    display: inline;
+    vertical-align: middle;
+}
+
+header ul li a{
+    color: ivory;
+    text-decoration: none;
+}
+
+#link-name {
+    size: 30px;
+    color: aqua;
+    text-decoration: none;
+}
+
+#link-name h1{
+    display: inline;
+}
+
+.imagebox {
     border: 3px solid rgb(29, 210, 255);
     border-radius: 400px;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 3;
-    padding: 20px;
     margin: 20px;
-    background: url("../images/photome.jpg");
-    background-size: 100% 100%;
 }
 
-.p-div {
+.circle {
+    border-radius: 50%;
+}
+
+.wrapper div p {
     text-align: center;
     vertical-align: middle;
 }
 
-.f-div {
+.wrapper div p span {
     font-size: 35px;
 }
 
@@ -44,20 +94,6 @@ body {
     grid-row-end: 3;
     padding: 20px;
     margin: 20px;
-}
-
-#f-footer {
-    size: 10px;
-    color: ivory;
-}
-
-#footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    /* Height of the footer*/ 
-    height: 4%;
-    left: 0;
 }
 
 #text-formula {
@@ -82,40 +118,11 @@ body {
     margin: 20px;
 }
 
-#m-navbar li {
-    display: inline;
-    vertical-align: middle;
-}
-
-#m-navbar li+li+li {
-    margin-left: 30px;
-}
-
-#m-navbar {
-    margin: 0;
-    padding: 0;
-    padding-top: 10px;
-    padding-bottom: 5px;
-    padding-left: 30px;
-}
-
-@font-face {
-    font-family: Calibri; /* Гарнитура шрифта */
-    src: url(style/Calibri.ttf); /* Путь к файлу со шрифтом */
-}
-
 #f-name {
-    font-size: 30px;
+    display: inline;
 }
 
-.li-a-link {
-    color: ivory;
-    text-decoration: none;
-}
-
-.li-a-link-name {
-    size: 30px;
-    color: aqua;
+#link-telegram {
     text-decoration: none;
 }
 
@@ -123,7 +130,11 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     height: 600px;
- }
+}
+
+.wrapper div {
+    box-shadow: 0 0 5px 2px rgb(29, 210, 255);
+}
 
 #wrapper-formula {
     display: grid;
@@ -133,6 +144,7 @@ body {
 #good {
     margin: 100px;
     justify-content: center;
+    box-shadow: 0 0 5px 2px rgb(29, 255, 29);
     border: 3px solid rgb(29, 255, 29);
     color: rgb(29, 210, 255);
     border-radius: 6px;
@@ -143,6 +155,7 @@ body {
 #bad {
     margin: 100px;
     justify-content: center;
+    box-shadow: 0 0 5px 2px rgb(255, 29, 29);
     border: 3px solid rgb(255, 29, 29);
     color: rgb(29, 210, 255);
     border-radius: 6px;
@@ -150,7 +163,7 @@ body {
     padding: 5%;
 }
 
-.pre-SM {
+#animal pre {
     text-align: center;
     padding-right: 270px;
     font-size: 30px;
@@ -177,4 +190,14 @@ body {
     margin-top: 6%;
     color: ivory;
     font-size: 70px;
+}
+
+#contact p {
+    margin-top: 6%;
+    color: ivory;
+    font-size: 70px;
+}
+
+.crossed {
+    text-decoration: line-through;
 }

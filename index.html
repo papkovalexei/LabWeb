@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
+        <meta charset="utf-8" name="main page" content="information about me">
+        <title>Главная страница</title>
         <link rel="stylesheet" href="style/site.css">
-        <meta charset="utf-8">
     </head>
     <body>
-        <header id="h-navbar">
-            <div id="navbar">
-                <ul id="m-navbar">
-                    <li><img src="images/avatar.png" style="width: 65px;"></li>
-                    <li><a class="li-a-link-name" href="index.html"><font id="f-name">Папков Алексей Дмитриевич M33041</font></a></li>
-                    <li><a class="li-a-link" href="goodcode.html">Лучший код</a></li>
-                    <li><a class="li-a-link" href="animal.html">Тотемное животное</a></li>
-                    <li><a class="li-a-link" href="formula.html">Формула успеха</a></li>
-                    <li><a class="li-a-link" href="contact.html">Контакты</a></li>
-                </ul>
-            </div>
+        <header>
+            <ul>
+                <li><img src="images/avatar.png" style="width: 65px;"></li>
+                <li><a id="link-name" href="index.html"><h1>Папков Алексей Дмитриевич M33041</h1></a></li>
+                <li><a href="goodcode.html">Лучший код</a></li>
+                <li><a href="animal.html">Тотемное животное</a></li>
+                <li><a href="formula.html">Формула успеха</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
         </header>
         <main>
         <div class="wrapper">
-        <div id=imagebox></div>
-        <div class="g-info"><p class="p-div"><font class="f-div">Место учебы: в первом <font color="red">не</font><font color="orange">кла</font><font color="yellow">сс</font><font color="green">ич</font><font color="blue">еск</font><font color="purple">ом</font> университете</font></p> </div>
-        <div class="bio"><p class="p-div"><font class="f-div">Учусь в ИТМО, очень нравится web-программирование. 1 лайк и я повешусь</font></p></div>
-        <div class="g-info"><p class="p-div"><font class="f-div">Место работы: IMAQLIQ C/C++ dev</font></p></div>
+            <div class=imagebox><img src="images/photome.jpg" alt="Это я" class="circle"></div>
+            <div class="g-info"><p><span>Место учебы: в первом <span style="color:red">не</span><span style="color:orange">кла</span><span style="color:yellow">сс</span><span style="color:green">ич</span><span style="color:blue">еск</span><span style="color:purple">ом</span> университете</span></p> </div>
+            <div class="bio"><p><span>Учусь в ИТМО, очень нравится web-программирование. 1 лайк и я повешусь</span></p></div>
+            <div class="g-info"><p><span>Место работы: IMAQLIQ C/C++ dev</span></p></div>
         </div>
         </main>
         <footer>
-            <div id="footer">
-                <font id="f-footer">© Папков Алексей Дмитриевич</font>
-            </div>
+            <p>© Папков Алексей Дмитриевич</p>
         </footer>
     </body>
 </html>
