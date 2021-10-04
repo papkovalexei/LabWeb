@@ -5,6 +5,8 @@ body {
     font-weight: 400;
     line-height: normal;
     color: rgba(0, 0, 0, 0.8);
+    text-transform: unset;
+    white-space: normal;
     letter-spacing: -.003em;
     margin: 0;
 }
