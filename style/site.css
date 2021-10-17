@@ -339,9 +339,10 @@ header ul li a{
 table {
     border: 1px solid #ccc;
     border-collapse: collapse;
-    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0;
-    width: 100%;
+    width: 90%;
     table-layout: fixed;
   }
   
