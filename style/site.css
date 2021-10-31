@@ -33,6 +33,7 @@ footer p {
 
 header {
     background-color: #17202c;
+    padding-bottom: 10px;
 }
 
 header ul {
@@ -43,7 +44,10 @@ header ul {
     padding-left: 30px;
 }
 header ul li+li+li {
-    margin-left: 30px;
+    margin-left: 40px;
+    padding: 6px;
+    border-radius: 4px;
+    border:3px solid rgb(29, 210, 255);
 }
 header ul li {
     display: inline;
