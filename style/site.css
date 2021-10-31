@@ -19,12 +19,12 @@ body {
 
 footer {
     position: fixed;
-    bottom: 0;
+    left: 0; bottom: 0;
+    padding: 5px;
+    background: #00676e;
+    color: #fff;
     width: 100%;
-    /* Height of the footer*/ 
-    height: 4%;
-    left: 0;
-}
+   }
 
 footer p {
     size: 10px;
@@ -78,6 +78,7 @@ header ul li a{
     border-radius: 50%;
     border: 3px solid rgb(29, 210, 255);
     box-shadow: 0 0 5px 2px rgb(29, 210, 255);
+    max-width: 100%;
 }
 
 .wrapper div p {
@@ -137,7 +138,8 @@ header ul li a{
 .wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    height: 600px;
+    grid-gap: 10px;
+    margin-bottom: 65px;
 }
 
 .wrapper div {
@@ -217,8 +219,9 @@ header ul li a{
 @media (max-width: 1600px) {
     .wrapper {
         display: grid;
+        grid-gap: 10px;
         grid-template-columns: repeat(2, 1fr);
-        height: 1000px;
+        margin-bottom: 65px;
     }
 
     #imagebox {
@@ -228,7 +231,6 @@ header ul li a{
         grid-row-start: 1;
         grid-row-end: 2;
         box-shadow: unset;
-        margin: 20px;
     }
 
     .g-info {
@@ -242,8 +244,6 @@ header ul li a{
         grid-row-end: 2;
         grid-column-start: 2;
         grid-column-end: 3;
-        padding: 20px;
-        margin: 20px;
     }
 
     #workplace {
@@ -257,8 +257,6 @@ header ul li a{
         grid-column-end: 2;
         grid-row-start: 2;
         grid-row-end: 3;
-        padding: 20px;
-        margin: 20px;
     }
 
     .bio {
@@ -272,16 +270,15 @@ header ul li a{
         grid-column-end: 3;
         grid-row-start: 2;
         grid-row-end: 3;
-        padding: 20px;
-        margin: 20px;
     }
 }
 
 @media (max-width: 1080px) {
     .wrapper {
         display: grid;
+        grid-gap: 10px;
         grid-template-columns: repeat(1, 1fr);
-        height: 1000px;
+        margin-bottom: 65px;
     }
 
     #imagebox {
@@ -290,7 +287,6 @@ header ul li a{
         grid-row-start: 1;
         grid-row-end: 2;
         box-shadow: unset;
-        margin: 20px;
     }
 
     .g-info {
@@ -303,8 +299,6 @@ header ul li a{
         grid-row-start: 2;
         grid-row-end: 3;
         grid-column-start: 1;
-        padding: 20px;
-        margin: 20px;
     }
 
     #workplace {
@@ -317,8 +311,6 @@ header ul li a{
         grid-column-start: 1;
         grid-row-start: 4;
         grid-row-end: 5;
-        padding: 20px;
-        margin: 20px;
     }
 
     .bio {
@@ -331,8 +323,6 @@ header ul li a{
         grid-column-start: 1;
         grid-row-start: 3;
         grid-row-end: 4;
-        padding: 20px;
-        margin: 20px;
     }
 }
 
