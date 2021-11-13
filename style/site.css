@@ -11,6 +11,10 @@ body {
     margin: 0;
 }
 
+#tablemain {
+    margin-bottom: 60px;
+}
+
 #absolute {
     position: absolute;
     top: 300px;
@@ -37,6 +41,7 @@ header {
 }
 
 header ul {
+    max-width: 1200px;
     margin: 0;
     padding: 0;
     padding-top: 10px;
@@ -155,6 +160,10 @@ header ul li a{
     grid-template-columns: repeat(2, 1fr);
 }
 
+#good:hover {
+    background-color: green;
+}
+
 #good {
     margin: 100px;
     justify-content: center;
@@ -164,6 +173,10 @@ header ul li a{
     border-radius: 6px;
     display: flex;
     padding: 5%;
+}
+
+#bad:hover {
+    background-color: red;
 }
 
 #bad {
@@ -277,6 +290,23 @@ header ul li a{
     }
 }
 
+@media (max-width: 1135px) {
+    header ul {
+        max-width: 650px;
+    }
+}
+
+@media (max-width: 620px) {
+    header ul li {
+        display: block;
+        margin: 10px;
+        text-align: center;
+    }
+    header ul li+li+li {
+        margin-left: 0px;
+    }
+}
+
 @media (max-width: 1080px) {
     .wrapper {
         display: grid;
@@ -327,6 +357,19 @@ header ul li a{
         grid-column-start: 1;
         grid-row-start: 3;
         grid-row-end: 4;
+    }
+
+    #wrapper-formula {
+        margin-bottom: 50px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #good {
+        margin: 30px;
+    }
+    
+    #bad {
+        margin: 30px;
     }
 }
 
