@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <meta charset="utf-8" name="contact page" content="my telegram">
-        <title>Мои контакты</title>
+        <meta charset="utf-8" name="main page" content="information about me">
+        <title>Главная страница</title>
         <link rel="stylesheet" href="style/site.css">
         <script src="script.js"></script>
+        <script src="todo.js"></script>
     </head>
     <body>
         <header>
@@ -18,13 +19,21 @@
                 <li><a type="liMenu" name="todo" href="todo.html">Todo</a></li>
             </ul>
         </header>
-        <main id="contact">
-            <p>
-                Telegram: <a id="link-telegram" href="https://t.me/joinchat/wqQGGez3gB00MjEy">@Lesha4</a>
-            </p>
+        <main>
+            <div id="containerform">
+                <form id="todoform" onsubmit="submitFunc();return false;">
+                    <label class="labeltodo" for="nameTask">Название задачи</label><br>
+                    <input type="text" id="nameTask" name="nameTask"><br>
+                    <label class="labeltodo" for="desc">Описание задачи</label><br>
+                    <input type="text" id="desc" name="desc"><br>
+                    <label class="labeltodo" for="who">Кто выполняет</label><br>
+                    <input type="text" id="who" name="who"><br>
+                    <input type="button" value="Отчистить" onclick="clean()">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <div id="containertable">
 
-            <div id="absolute">
-                <p>АБСОЛЮТНАЯ ШТУКА</p>
             </div>
         </main>
         <footer>

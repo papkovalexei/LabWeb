@@ -197,6 +197,12 @@ header ul li a{
     color: ivory;
 }
 
+
+#containertable {
+    margin-top: 10px;
+    margin-bottom: 90px;
+}
+
 #formula {
     display: flex;
     justify-content: center;
@@ -290,13 +296,17 @@ header ul li a{
     }
 }
 
-@media (max-width: 1135px) {
+@media (max-width: 1220px) {
     header ul {
         max-width: 650px;
     }
+
+    header ul li+li+li {
+        margin-left: 57px;
+    }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 670px) {
     header ul li {
         display: block;
         margin: 10px;
@@ -373,6 +383,25 @@ header ul li a{
     }
 }
 
+#containerform {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+}
+#todoform {
+    width: min-content;
+    height: min-content;
+    padding: 10px;
+    border: 3px solid aqua;
+    box-shadow: 0 0 5px 2px rgb(29, 210, 255);
+    font-size: 20px;
+}
+
+.labeltodo {
+    color: aqua;
+}
+
 table {
     border: 1px solid #ccc;
     border-collapse: collapse;
@@ -390,8 +419,8 @@ table {
   }
   
   table tr {
-    background-color: #bcd100;
-    border: 1px solid rgb(255, 5, 5);
+    background-color: #ffffff;
+    border: 1px solid rgb(0, 234, 255);
     padding: .35em;
   }
   
@@ -452,5 +481,5 @@ table {
   }
   
   tr:nth-child(even) {
-    background-color: red;
+    background-color: rgb(4, 0, 255);
   }
