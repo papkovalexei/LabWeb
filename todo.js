@@ -60,6 +60,7 @@ function submitFunc() {
 
     if (obj.nameTask == 0 || obj.desc == 0 || obj.who == 0) {
         alert("Не все поля заполнены");
+        return;
     } else {
         table = document.getElementById("tabletodo");
 
