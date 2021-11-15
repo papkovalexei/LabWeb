@@ -16,7 +16,7 @@ window.onload = function() {
     }
     thead.appendChild(tr);
     var tbody = document.createElement("tbody");
-    table.setAttribute("id", "tabletodo");
+    tbody.setAttribute("id", "tabletodo");
 
     table.appendChild(thead);
     table.appendChild(tbody);
@@ -45,6 +45,10 @@ window.onload = function() {
 }
 
 function clean() {
+    var table = document.getElementById("tabletodo");
+    while (table.firstChild) {
+        table.removeChild(table.firstChild);
+    }
     localStorage.clear();
 }
 
