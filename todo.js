@@ -5,7 +5,9 @@ window.onload = function() {
     var tr = document.createElement("tr");
 
     let headName = ["Название", "Описание", "Исполнитель"];
-
+    var tTemplate = document.createElement("template");
+    tTemplate.setAttribute("id", "tabletemplate");
+    tTemplate.appendChild(document.createElement("tr"));
     for (var i = 0; i < headName.length; i++) {
         console.log(i);
         var thHelp = document.createElement("th");
@@ -13,7 +15,12 @@ window.onload = function() {
         var text = document.createTextNode(headName[i]);
         thHelp.appendChild(text);
         tr.appendChild(thHelp);
+
+        var tdHelp = document.createElement("td");
+        tdHelp.setAttribute("data-label", headName[i]);
+        tTemplate.getElementsByTagName("tr")[0].appendChild(tdHelp);
     }
+    document.body.appendChild(tTemplate);
     thead.appendChild(tr);
     var tbody = document.createElement("tbody");
     tbody.setAttribute("id", "tabletodo");
@@ -21,26 +28,15 @@ window.onload = function() {
     table.appendChild(thead);
     table.appendChild(tbody);
     body.appendChild(table);
-
+    var tableTemplate = document.querySelector("#tabletemplate");
     for (var i = 0; i < localStorage.length; i++) {
         var data = JSON.parse(localStorage[i]);
-        var table = document.getElementById("tabletodo");
-
-        var tr = document.createElement("tr");
-        var helpTd = document.createElement("td");
-        helpTd.setAttribute("data-label", "Название");
-        helpTd.appendChild(document.createTextNode(data["nameTask"]));
-        tr.appendChild(helpTd);
-        helpTd = document.createElement("td");
-        helpTd.setAttribute("data-label", "Описание");
-        helpTd.appendChild(document.createTextNode(data["desc"]));
-        tr.appendChild(helpTd);
-        helpTd = document.createElement("td");
-        helpTd.setAttribute("data-label", "Исполнитель");
-        helpTd.appendChild(document.createTextNode(data["who"]));
-        tr.appendChild(helpTd);
-
-        table.appendChild(tr);
+        var newC = tableTemplate.getElementsByTagName("tr")[0].cloneNode(true);;
+        var rd = newC.getElementsByTagName("td");
+        rd[0].textContent = data["nameTask"];
+        rd[1].textContent = data["desc"];
+        rd[2].textContent = data["who"];
+        table.getElementsByTagName("tbody")[0].appendChild(newC);
     }
 }
 
@@ -50,6 +46,13 @@ function clean() {
         table.removeChild(table.firstChild);
     }
     localStorage.clear();
+}
+
+function cleanField() {
+    var elements = document.getElementById("todoform").elements;
+    elements[0].value = "";
+    elements[1].value = "";
+    elements[2].value = "";
 }
 
 function submitFunc() {
@@ -67,23 +70,15 @@ function submitFunc() {
         return;
     } else {
         table = document.getElementById("tabletodo");
-
-        var tr = document.createElement("tr");
-        var helpTd = document.createElement("td");
-        helpTd.setAttribute("data-label", "Название");
-        helpTd.appendChild(document.createTextNode(obj.nameTask));
-        tr.appendChild(helpTd);
-        helpTd = document.createElement("td");
-        helpTd.setAttribute("data-label", "Описание");
-        helpTd.appendChild(document.createTextNode(obj.desc));
-        tr.appendChild(helpTd);
-        helpTd = document.createElement("td");
-        helpTd.setAttribute("data-label", "Исполнитель");
-        helpTd.appendChild(document.createTextNode(obj.who));
-        tr.appendChild(helpTd);
-
-        table.appendChild(tr);
-
+        var tableTemplate = document.querySelector("#tabletemplate");
+        var newC = tableTemplate.getElementsByTagName("tr")[0].cloneNode(true);;
+        var rd = newC.getElementsByTagName("td");
+        rd[0].textContent = obj.nameTask;
+        rd[1].textContent = obj.desc;
+        rd[2].textContent = obj.who;
+        console.log(rd);
+        console.log(obj);
+        table.appendChild(newC);
         localStorage.setItem(localStorage.length, JSON.stringify(obj));
 
         document.getElementById("nameTask").value = "";
