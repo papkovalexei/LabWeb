@@ -2,50 +2,78 @@
 <html lang="ru">
     <head>
         <meta charset="utf-8" name="main page" content="information about me">
-        <title>Главная страница</title>
-        <link rel="stylesheet" href="style/site.css">
-        <script src="script.js"></script>
+        <title>Мои задачи</title>
         <script src="todo.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+          crossorigin="anonymous"></script>
+        <script src="bs_dialogs.js"></script>
+        <link rel="stylesheet" href="style/coolstyle.css">
     </head>
     <body>
         <header>
-            <ul>
-                <li><img src="images/avatar.png" style="width: 65px;"></li>
-                <li><a id="link-name" href="index.html"><h1>Папков Алексей Дмитриевич M33041</h1></a></li>
-                <li><a type="liMenu" name="goodcode" href="goodcode.html">Код</a></li>
-                <li><a type="liMenu" name="table" href="table.html">Таблица</a></li>
-                <li><a type="liMenu" name="formula" href="formula.html">Успех</a></li>
-                <li><a type="liMenu" name="contact" href="contact.html">Контакты</a></li>
-                <li><a type="liMenu" name="todo" href="todo.html">Todo</a></li>
-            </ul>
+            <div id="divh1">
+                <h1 id="labelh1">Мой список задач)</h1>
+                <a href="index.html">Вернуться назад</a>
+            </div>
         </header>
         <main>
-            <div id="containerform">
-                <form id="todoform" onsubmit="submitFunc();return false;">
-                    <label class="labeltodo" for="nameTask">Название задачи</label>
-                    <input type="text" id="nameTask" name="nameTask" required>
-                    <label class="labeltodo" for="desc">Описание задачи</label>
-                    <input type="text" id="desc" name="desc" required>
-                    <label class="labeltodo" for="who">Кто выполняет</label>
-                    <input type="text" id="who" name="who" required>
-                    <input type="button" value="Очистить Поля" onclick="cleanField()">
-                    <input type="button" value="Очистить хранилище" onclick="clean()">
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-            <div id="containertable">
+        <div id="todogrid">
+            <div id="lefttodo">
+                <div id="containerform">
+                    <button id="new_task" class="btn btn-secondary m-2">Новая задача</button>
+                    <button id="yes_no" class="btn btn-secondary m-2">Очистить записи</button>
+                </div>
+                <div id="containertable">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Название</th>
+                                <th scope="col">Описание</th>
+                                <th scope="col">Исполнитель</th>
+                            </tr></thead>
+                        <tbody id="tabletodo">
 
+                        </tbody>
+                    </table>
+                </div>
             </div>
+            <div id="righttodo">
+                <img src="images/loader.gif" class="preloader none">
+                <div class="neterr error none">
+                    <img src="images/networkerror.jpg" style="width: 300px;">
+                    <h1 >Ошибка соединения</h1>
+                </div>
+                <div class="container mt-5 mb-5">
+                    <div class="d-flex justify-content-center row">
+                        <div class="d-flex flex-column col-md-8">
+                            <div class="coment-bottom bg-white p-2 px-4">
+                                <div class="commented-section mt-2" id="commenthere">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         </main>
-        <footer>
-            <p>© Папков Алексей Дмитриевич</p>
-        </footer>
         <template id="tabletemplate">
             <tr>
                 <td data-label="Название"></td>
                 <td data-label="Описание"></td>
                 <td data-label="Исполнитель"></td>
             </tr>
+        </template>
+        <template id="commenttemplate">
+            <div class="comment-borders">
+                <div class="d-flex flex-row align-items-center commented-user">
+                    <h5 class="mr-2">Name: </h5>
+                </div>
+                <div class="comment-text-sm"><span></span></div>
+            </div>
         </template>
     </body>
 </html>

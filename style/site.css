@@ -45,7 +45,7 @@ header {
 }
 
 header ul {
-    max-width: 1200px;
+    max-width: 1230px;
     margin: 0;
     padding: 0;
     padding-top: 10px;
@@ -300,9 +300,9 @@ header ul li a{
     }
 }
 
-@media (max-width: 1220px) {
+@media (max-width: 1240px) {
     header ul {
-        max-width: 650px;
+        max-width: 680px;
     }
 
     header ul li+li+li {
@@ -310,7 +310,7 @@ header ul li a{
     }
 }
 
-@media (max-width: 670px) {
+@media (max-width: 680px) {
     header ul li {
         display: block;
         margin: 10px;
