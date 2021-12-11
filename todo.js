@@ -5,9 +5,7 @@ window.onload = function() {
     var tr = document.createElement("tr");
 
     let headName = ["Название", "Описание", "Исполнитель"];
-    var tTemplate = document.createElement("template");
-    tTemplate.setAttribute("id", "tabletemplate");
-    tTemplate.appendChild(document.createElement("tr"));
+
     for (var i = 0; i < headName.length; i++) {
         console.log(i);
         var thHelp = document.createElement("th");
@@ -18,9 +16,8 @@ window.onload = function() {
 
         var tdHelp = document.createElement("td");
         tdHelp.setAttribute("data-label", headName[i]);
-        tTemplate.getElementsByTagName("tr")[0].appendChild(tdHelp);
     }
-    document.body.appendChild(tTemplate);
+
     thead.appendChild(tr);
     var tbody = document.createElement("tbody");
     tbody.setAttribute("id", "tabletodo");
@@ -29,9 +26,10 @@ window.onload = function() {
     table.appendChild(tbody);
     body.appendChild(table);
     var tableTemplate = document.querySelector("#tabletemplate");
+
     for (var i = 0; i < localStorage.length; i++) {
         var data = JSON.parse(localStorage[i]);
-        var newC = tableTemplate.getElementsByTagName("tr")[0].cloneNode(true);;
+        var newC = tableTemplate.content.firstElementChild.cloneNode(true);;
         var rd = newC.getElementsByTagName("td");
         rd[0].textContent = data["nameTask"];
         rd[1].textContent = data["desc"];
@@ -65,25 +63,21 @@ function submitFunc() {
 
     var table = document.getElementById("tabletodo");
 
-    if (obj.nameTask == 0 || obj.desc == 0 || obj.who == 0) {
-        alert("Не все поля заполнены");
-        return;
-    } else {
-        table = document.getElementById("tabletodo");
-        var tableTemplate = document.querySelector("#tabletemplate");
-        var newC = tableTemplate.getElementsByTagName("tr")[0].cloneNode(true);;
-        var rd = newC.getElementsByTagName("td");
-        rd[0].textContent = obj.nameTask;
-        rd[1].textContent = obj.desc;
-        rd[2].textContent = obj.who;
-        console.log(rd);
-        console.log(obj);
-        table.appendChild(newC);
-        localStorage.setItem(localStorage.length, JSON.stringify(obj));
+    table = document.getElementById("tabletodo");
+    var tableTemplate = document.querySelector("#tabletemplate");
+    var newC = tableTemplate.content.firstElementChild.cloneNode(true);;
+    var rd = newC.getElementsByTagName("td");
+    rd[0].textContent = obj.nameTask;
+    rd[1].textContent = obj.desc;
+    rd[2].textContent = obj.who;
+    console.log(rd);
+    console.log(obj);
+    table.appendChild(newC);
+    localStorage.setItem(localStorage.length, JSON.stringify(obj));
 
-        document.getElementById("nameTask").value = "";
-        document.getElementById("desc").value = "";
-        document.getElementById("who").value = "";
-    }
+    document.getElementById("nameTask").value = "";
+    document.getElementById("desc").value = "";
+    document.getElementById("who").value = "";
+
     return false;
 }

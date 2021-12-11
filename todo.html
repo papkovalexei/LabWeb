@@ -22,14 +22,14 @@
         <main>
             <div id="containerform">
                 <form id="todoform" onsubmit="submitFunc();return false;">
-                    <label class="labeltodo" for="nameTask">Название задачи</label><br>
-                    <input type="text" id="nameTask" name="nameTask"><br>
-                    <label class="labeltodo" for="desc">Описание задачи</label><br>
-                    <input type="text" id="desc" name="desc"><br>
-                    <label class="labeltodo" for="who">Кто выполняет</label><br>
-                    <input type="text" id="who" name="who"><br>
-                    <input type="button" value="Отчистить Поля" onclick="cleanField()">
-                    <input type="button" value="Отчистить хранилище" onclick="clean()">
+                    <label class="labeltodo" for="nameTask">Название задачи</label>
+                    <input type="text" id="nameTask" name="nameTask" required>
+                    <label class="labeltodo" for="desc">Описание задачи</label>
+                    <input type="text" id="desc" name="desc" required>
+                    <label class="labeltodo" for="who">Кто выполняет</label>
+                    <input type="text" id="who" name="who" required>
+                    <input type="button" value="Очистить Поля" onclick="cleanField()">
+                    <input type="button" value="Очистить хранилище" onclick="clean()">
                     <input type="submit" value="Submit">
                 </form>
             </div>
@@ -40,5 +40,12 @@
         <footer>
             <p>© Папков Алексей Дмитриевич</p>
         </footer>
+        <template id="tabletemplate">
+            <tr>
+                <td data-label="Название"></td>
+                <td data-label="Описание"></td>
+                <td data-label="Исполнитель"></td>
+            </tr>
+        </template>
     </body>
 </html>
