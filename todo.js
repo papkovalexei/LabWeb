@@ -1,7 +1,7 @@
 window.onload = function() {
     var table = document.getElementById("tabletodo");
     var tableTemplate = document.getElementById("tabletemplate");
-    console.log(localStorage);
+
     for (var i = 0; i < localStorage.length; i++) {
         var data = JSON.parse(localStorage[i]);
         var newC = tableTemplate.content.firstElementChild.cloneNode(true);;
@@ -12,23 +12,15 @@ window.onload = function() {
         table.appendChild(newC);
     }
 
-    let frm = 
-    `<form>
-    <div class="mb-3">
-        <label for="Сделать шото" class="form-label">Название</label>
-        <input type="text" data-name="nameTask" class="form-control" id="nametask" required>
-        <label for="описать шото)" class="form-label">Описание</label>
-        <input type="text" data-name="desc" class="form-control" id="desctask" required>
-        <label for="ктооо" class="form-label">Исполнитель задачи</label>
-        <input type="text" data-name="who" class="form-control" id="whotask" required>
-    </div>
-    </form>`
+    let frm = document.querySelector("#moduleform").innerHTML;
 
     document.getElementById('new_task').onclick = async function () {
         let dlg = new BsDialogs({backdrop: true})
         dlg.form('Добваление задачи', 'Добавить', frm)
         let ret = await dlg.onsubmit()
-        submitFunc(ret)
+
+        if (typeof ret != 'undefined')
+            submitFunc(ret)
     }
 
     document.getElementById('yes_no').onclick = async function () {
@@ -53,13 +45,13 @@ function addComment(name, text) {
 async function loadComment(n) {
     document.querySelector(".preloader").classList.remove("none");
     document.querySelector(".neterr").classList.remove("error");
-    console.log(document.querySelector(".neterr"));
-    var url = "https://jsonplaceholder.typicode.com/comments";
+
+    var url = "https://jsonplaceholder.typicode.com/comments/?_limit=100";
     try {
         let res = await fetch(url);
         if (res.ok) {
             var json = await res.json();
-            console.log(json.filter((x)=>x.id >= Math.random()*1000));
+
             var filtered = json.filter((x)=>x.id >= Math.random()*1000);
             for (var i = 0; i < Math.min(filtered.length, 4); i++) { 
                 addComment(filtered[i].name, filtered[i].body);
@@ -93,8 +85,7 @@ function submitFunc(obj) {
     rd[0].textContent = obj.nameTask;
     rd[1].textContent = obj.desc;
     rd[2].textContent = obj.who;
-    console.log(rd);
-    console.log(obj);
+
     table.appendChild(newC);
     localStorage.setItem(localStorage.length, JSON.stringify(obj));
 
